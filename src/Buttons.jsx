@@ -1,22 +1,14 @@
-export function Button() {
+export function SimpleButton() {
     return (
-        <div>I am a button</div>
-    )
-}
-
-export function ButtonGroup() {
-    return (
-        <div>
-            <button>Btn A</button>
-            <button>Btn B</button>
+        <div className="text-end">
+            <button className="btn btn-secondary me-1">ok</button>
+            <button className="btn btn-danger">cancel</button>
         </div>
     )
 }
 
-export function ButtonWithIcon() {
+export function SubButton() {
     return (
-        <button>
-           Save ✍
-        </button>
+        <button className="btn btn-success btn-sm ms-1">Submit</button>
     )
 }
