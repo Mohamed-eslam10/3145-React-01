@@ -1,0 +1,17 @@
+* {
+    transition: all 0.3s;
+}
+
+div.card_style {
+    &:hover {
+        transform: scale(1.02);
+    }
+}
+li.item_style {
+    padding: 0 8px;
+    &:hover {
+        background-color: #ebebeb83;
+        border-radius: 5px;
+        
+    }
+}

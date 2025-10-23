@@ -10,6 +10,7 @@ export function App() {
             <Nav></Nav>
             <Card></Card>
             <Card></Card>
+            
             <Footer></Footer>
         </div>
     )

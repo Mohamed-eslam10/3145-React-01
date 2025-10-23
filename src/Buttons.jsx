@@ -9,6 +9,6 @@ export function SimpleButton() {
 
 export function SubButton() {
     return (
-        <button className="btn btn-success btn-sm ms-1">Submit</button>
+        <button className="btn btn-light btn-sm ms-1">Submit</button>
     )
 }
