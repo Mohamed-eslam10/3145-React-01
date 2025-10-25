@@ -1,6 +1,10 @@
-export function Button() {
+export function Button(props) {
+    // console.log(props);
+    // console.log(props.text);
+    // console.log(props['text']);
+
     return (
-        <div>I am a button</div>
+        <button>{props.text}</button>
     )
 }
 
@@ -16,7 +20,9 @@ export function ButtonGroup() {
 export function ButtonWithIcon() {
     return (
         <button>
-           Save ✍
+            Save ✍
         </button>
     )
 }
+
+

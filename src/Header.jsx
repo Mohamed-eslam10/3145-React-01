@@ -1,6 +1,6 @@
 import { Button, ButtonWithIcon } from "./Buttons"
 
-export default function TopPart() {
+export default function Header() {
     return (
         <header>
             <h1>My App Title</h1>
