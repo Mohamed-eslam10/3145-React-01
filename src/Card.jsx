@@ -3,8 +3,8 @@ export default function Card(props) {
     console.log(props)
 
     return (
-        <div>
-            <div>
+        <div className="card m-2">
+            <div className="card-header">
                 <h3>{props.header}</h3>
             </div>
             <div>

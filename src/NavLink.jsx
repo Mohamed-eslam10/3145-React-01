@@ -1,5 +1,5 @@
 export default function NavLink(props) {
     return (
-        <a href="">{props.linkText}</a>
+        <a class='p-4' href="">{props.linkText}</a>
     )
 }

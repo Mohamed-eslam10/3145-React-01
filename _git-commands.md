@@ -12,3 +12,14 @@ git branch
 ```bash
 git checkout <branch-name>
 ```
+
+# Delete a branch
+## Switch to another branch
+```bash
+git branch -D <branch-name>
+```
+
+# Create a branch from another in one step
+```bash
+git checkout -b <branch-name>
+```
