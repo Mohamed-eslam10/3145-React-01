@@ -7,7 +7,7 @@ export default function Card(props) {
             <div className="card-header">
                 <h3>{props.header}</h3>
             </div>
-            <div>
+            <div className="p-5">
                 {props.children}
             </div>
             <div>Card Footer</div>
