@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  --color-main: #950;
+  --spacing-sm: 4px;
+  --spacing-md: 8px;
+  --spacing-lg: 20px;
+  --spacing-xl: 40px;
+}
+
+.btn-primary {
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+}
+
+.btn {
+  @apply px-6 py-2 rounded-md shadow-md text-white hover:brightness-50;
+}
