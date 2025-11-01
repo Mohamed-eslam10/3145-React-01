@@ -1,6 +1,6 @@
 export function Button() {
     return (
-        <div>I am a button</div>
+        <button className="btn">I am a button</button>
     )
 }
 
@@ -16,7 +16,7 @@ export function ButtonGroup() {
 export function ButtonWithIcon() {
     return (
         <button>
-           Save ✍
+           Save <span className="inline-block animate-wiggle">✍</span>
         </button>
     )
 }
