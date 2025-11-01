@@ -1,11 +1,13 @@
 import TopPart from "./TopPart";
 import BottomPart from "./BottomPart";
-import { Button } from "flowbite-react";
+import { Button, Alert, Badge } from "flowbite-react";
 
 export default function App() {
   return (
     <div>
       <TopPart></TopPart>
+      <Alert>This is an alert</Alert>
+      <Badge>33</Badge>
 
       <div className="p-4">
         <Button color="transparent" className="bg-green-500 text-white">
