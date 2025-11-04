@@ -13,7 +13,7 @@ export default function RegisterForm() {
 
   return (
     <div className="registration-form">
-      <h2>Create an Account</h2>
+       <h2 className="text-center py-3 font-black text-2xl">Create an Account</h2>
       <p>Welcome {firstName}</p>
       <form>
         <div className="form-group">

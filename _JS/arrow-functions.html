@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Functions</title>
+  </head>
+  <body>
+    <script>
+      function fnc_1() {
+        console.log("fnc_1");
+      }
+
+      function fnc_1() {
+        console.log("fnc_1_new");
+      }
+      fnc_1();
+
+      fnc_1();
+
+      const fnc_2 = function () {
+        console.log("fnc_2");
+      };
+      fnc_2();
+
+      const fnc_3 = () => {
+        console.log("fnc_3");
+      };
+      fnc_3();
+
+      const fnc_4 = function (price) {
+        return price * 1.14;
+      };
+      const total_price_4 = fnc_4(1000);
+      console.log("total_price_4", total_price_4);
+
+      const fnc_5 = (price) => price * 1.14;
+
+      const total_price_5 = fnc_5(1000);
+      console.log("total_price_5", total_price_5);
+
+      const greeting = (name) => console.log(`Welcome ${name}`);
+
+      const sum = (n1, n2) => n1 + n2;
+
+      const isOld = (age) => age >= 21;
+
+      const sayWelcome = () => console.log("Welcome");
+    </script>
+  </body>
+</html>
