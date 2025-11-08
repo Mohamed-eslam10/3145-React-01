@@ -36,6 +36,7 @@ export default function Counter2() {
       <div className="flex gap-4 items-center">
         {nums.map((num) => (
           <Button
+            key={new Date().getTime() * Math.random()}
             onClick={() => updateNumber(num)}
             className="bg-green-600 text-white"
             color="trasparent"

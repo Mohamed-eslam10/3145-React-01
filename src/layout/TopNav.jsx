@@ -13,6 +13,18 @@ import {
 
 import { Link } from "react-router";
 
+const links = [
+  { label: "Home", url: "/" },
+  { label: "Counter", url: "/counter" },
+  { label: "Counter 2", url: "/counter-2" },
+  { label: "Products", url: "/products" },
+  { label: "Users", url: "/users" },
+  { label: "Register", url: "/auth/register" },
+  { label: "Login", url: "/auth/login" },
+];
+
+links.forEach((link) => console.log(link));
+
 export default function TopNav() {
   return (
     <Navbar fluid rounded>
@@ -53,11 +65,11 @@ export default function TopNav() {
         <NavbarToggle />
       </div>
       <NavbarCollapse>
-        <Link className="text-white" to="/" active>Home</Link>
-        <Link className="text-white" to="/counter">Counter</Link>
-        <Link className="text-white" to="/counter-2">Counter 2</Link>
-        <Link className="text-white" to="/register">Register</Link>
-        <Link className="text-white" to="/login">Login</Link>
+        {links.map(({ label, url }) => (
+          <Link key={label} className="text-gray-600" to={`${url}`}>
+            {label}
+          </Link>
+        ))}
       </NavbarCollapse>
     </Navbar>
   );
