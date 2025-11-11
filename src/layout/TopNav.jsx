@@ -23,7 +23,7 @@ const links = [
   { label: "Login", url: "/auth/login" },
 ];
 
-links.forEach((link) => console.log(link));
+// links.forEach((link) => console.log(link));
 
 export default function TopNav() {
   return (

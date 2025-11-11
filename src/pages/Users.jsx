@@ -1,7 +1,3 @@
-// Fetching data in short
-// const res = await fetch("https://dummyjson.com/users");
-// const data = await res.json();
-
 import { Link } from "react-router";
 
 // Fetching data with logic

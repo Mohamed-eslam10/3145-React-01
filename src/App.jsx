@@ -21,9 +21,9 @@ export default function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/users" element={<Users />} />
           <Route path="/users/:id" element={<User />} />
-          <Route path="/auth/register" element={<RegisterForm />} />
-          <Route path="/auth/login" element={<Login />} />
-          <Route path="*" element={<P404 />} />
+          <Route path="/auth/register" element={<RegisterForm />} /> 
+          <Route path="/auth/login" element={<Login />} /> 
+          <Route path="*" element={<P404 />} /> 
         </Routes>
       </div>
     </div>
