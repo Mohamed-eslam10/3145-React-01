@@ -2,28 +2,22 @@ import { Link } from "react-router";
 
 // Fetching data with logic
 const api = "https://dummyjson.com/users";
-console.log("😂 api", api);
-
+ 
 let users = [];
 
 const res = await fetch(api);
-console.log("😂 res", res);
-
+ 
 if (res.status === 200) {
-  console.log("😂 success");
-
+ 
   const data = await res.json();
-  console.log("😂 data", data);
-
+ 
   //   const users = data.users;
   //   In Short, use object distruct
   //   const { users } = data;
 
   users = data.users;
-  console.log("😂 users", users);
-} else {
-  console.log("😂 not success");
-}
+ } else {
+ }
 
 export default function Users() {
   return (

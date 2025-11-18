@@ -25,7 +25,7 @@ const links = [
 
 // links.forEach((link) => console.log(link));
 
-export default function TopNav() {
+export default function TopNav( ) {
   return (
     <Navbar fluid rounded>
       <NavbarBrand href="https://flowbite-react.com">
@@ -38,7 +38,8 @@ export default function TopNav() {
           My App
         </span>
       </NavbarBrand>
-      <div className="flex md:order-2">
+      <div className="flex md:order-2 items-center gap-1">
+        <span className="block text-sm text-white">Guest</span>
         <Dropdown
           arrowIcon={false}
           inline

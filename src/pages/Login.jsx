@@ -1,46 +1,132 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Link, useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import ErrorComponent from "../components/messages/Error";
 
-export default function Login() {
-  const [errors, setErrors] = useState([]);
+export default function Login( ) {
+  const [error, SetError] = useState("");
+
+  const usernameRef = useRef(null);
+  const passwordRef = useRef(null);
+
+  // Create instance function from the useNavigate hook to be used inside the code
+  const navigate = useNavigate();
+
+  console.log('navigate', navigate)
+
+  const handleLogin = async () => {
+
+    const username = usernameRef.current.value;
+    const password = passwordRef.current.value;
+
+    console.log('username', username)
+    console.log('password', password)
+
+    const credintials = {
+      username,
+      password
+    }
+
+    console.log('credintials', credintials);
+    const body = JSON.stringify(credintials);
+
+    // Fetch Data
+    const api = `https://dummyjson.com/auth/login`;
+    const init = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body
+    };
+
+    fetch(api, init)
+      .then(res => res.json())
+      .then(data => {
+        if (data.id) {
+          // Success
+          console.log('data after success', data.firstName);
+
+         
+
+          navigate('/');
+        } else {
+          SetError(data.message);
+          toast.error(<ErrorComponent message={data.message} />, {
+            icon: false,
+            closeButton: false
+          });
+          // toast(data.message);
+          // toast.error(data.message);
+          // toast.success(data.message, {
+          //   theme: 'light'
+          // });
+          // toast.warning(data.message);
+          // toast.info(data.message);
+        }
+      })
+
+  }
+
+
 
   return (
-    <div className="registration-form">
-      <h2 className="text-center py-3 font-black text-2xl">
+    <div className="registration-form mx-auto mt-7 bg-white shadow rounded-xl p-6 space-y-4">
+      <h2 className="text-center py-3 font-black text-2xl text-gray-800">
         Login to Your Account
       </h2>
-      <p>Welcome, Please Login</p>
-      <form>
-        <div className="form-group">
-          <label htmlFor="username">Username</label>
+
+      <div>
+        <div className="form-group flex flex-col space-y-1">
+          <label htmlFor="username" className="text-gray-700 font-medium">Username</label>
           <input
+            ref={usernameRef}
             type="text"
-            id="username"
             name="username"
             placeholder="Enter Your Username"
+            className="border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
           />
         </div>
 
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
+        <div className="form-group flex flex-col space-y-1">
+          <label htmlFor="password" className="text-gray-700 font-medium">Password</label>
           <input
+            ref={passwordRef}
             type="password"
-            id="password"
             name="password"
-            placeholder="Create a password"
+            placeholder="password"
+            className="border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
           />
         </div>
 
-        <div>{errors}</div>
+        <div className="text-red-500 text-sm">
 
-        <div className="form-group checkbox-group">
-          <input type="checkbox" id="terms" name="terms" />
-          <label htmlFor="terms">Remember Me</label>
+          {error && <p className="text-red-600" >{error}</p>}
+
         </div>
 
-        <button type="submit" className="submit-btn">
+        <div className="form-group checkbox-group flex items-center space-x-2 mt-2 mb-2">
+          <input type="checkbox" id="terms" name="terms" />
+          <label htmlFor="terms" className="text-gray-700 ">Remember Me</label>
+        </div>
+
+
+        <button
+
+          onClick={handleLogin}
+          className="submit-btn mt-2 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+        >
           Login
         </button>
-      </form>
+
+        <div>
+          {/* Do not have account */}
+          <p className="text-gray-700 text-sm">
+            Don't have an account?{" "}
+            <Link to="/auth/register" className="text-blue-600 font-medium">
+              Register
+            </Link>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

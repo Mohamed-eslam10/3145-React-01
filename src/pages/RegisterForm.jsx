@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PasswordValidator from "../components/PasswordValidator";
+import { Link } from "react-router";
 
 export default function RegisterForm() {
   const [firstName, setFirstName] = useState("");
@@ -216,9 +217,9 @@ export default function RegisterForm() {
 
         <p className="mt-4 text-center text-sm text-gray-600">
           Already have an account?{" "}
-          <a href="#" className="text-blue-600 hover:text-blue-500 font-medium">
+          <Link to="/auth/login" className="text-blue-600 hover:text-blue-500 font-medium">
             Sign in
-          </a>
+          </Link>
         </p>
       </div>
     </div>

@@ -8,8 +8,12 @@ import P404 from "./pages/P404";
 import Products from "./pages/Products";
 import Users from "./pages/Users";
 import User from "./pages/User";
+import { ToastContainer } from "react-toastify";
+import { useState } from "react";
 
 export default function App() {
+
+
   return (
     <div className="h-screen flex flex-col">
       <TopNav />
@@ -21,11 +25,14 @@ export default function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/users" element={<Users />} />
           <Route path="/users/:id" element={<User />} />
-          <Route path="/auth/register" element={<RegisterForm />} /> 
-          <Route path="/auth/login" element={<Login />} /> 
-          <Route path="*" element={<P404 />} /> 
+          <Route path="/auth/register" element={<RegisterForm />} />
+          <Route path="/auth/login" element={<Login   />} />
+          <Route path="*" element={<P404 />} />
         </Routes>
       </div>
+
+      <ToastContainer position="top-left" theme="dark" />
+
     </div>
   );
 }
